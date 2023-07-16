@@ -8,6 +8,8 @@ RUN pip install -r requirements.pip
 
 COPY . .
 
+RUN python manage.py migrate
+
 EXPOSE 8000
 
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "django_ldap_user_registration.wsgi:application"]
