@@ -24,8 +24,7 @@ class RegistrationTestCase(TestCase):
         self.institution = Institution.objects.create(name='Wakanda')
         self.user_password = self.passwd.getsalt(length=16) # some random chars to be the password
         self.data = {
-            'first_name': 'John',
-            'last_name': 'Doe',
+            'full_name': 'John Doe',
             'gender': '0',
             'email': 'jdoe@example.com',
             'title': 'Mr.',

@@ -56,7 +56,7 @@ class LDAPOperations():
         :return: tuple
 
         """
-        dn = 'uid=' + modlist['uid'][0] + ',' + settings.LDAP_BASE_DN
+        dn = 'cn=' + modlist['cn'][0] + ',' + settings.LDAP_BASE_DN
 
         # convert modlist to bytes form ie b'abc'
         modlist_bytes = {}
@@ -74,7 +74,7 @@ class LDAPOperations():
         :param password:
         :return: ldap result
         """
-        dn = "uid=%s,%s" % (username, settings.LDAP_BASE_DN,)
+        dn = "cn=%s,%s" % (username, settings.LDAP_BASE_DN,)
         user_result = self.check_attribute('uid', username)  # get user
         tmp_modlist = dict(user_result)
         old_value = {"userPassword": [tmp_modlist[dn]['userPassword'][0]]}
@@ -85,6 +85,6 @@ class LDAPOperations():
         return result
 
     def delete_user(self, username):
-        dn = "uid=%s,%s" % (username, settings.LDAP_BASE_DN,)
+        dn = "cn=%s,%s" % (username, settings.LDAP_BASE_DN,)
         response = self.con.delete_s(dn)
         return response

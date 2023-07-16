@@ -7,8 +7,7 @@
     <thead>
     <tr>
         <th>&nbsp;</th>
-        <th>First name</th>
-        <th>Last name</th>
+        <th>Full name</th>
         <th>Email</th>
         <th>Verified</th>
         <th>Active</th>
@@ -28,10 +27,9 @@
         </td>
         <td>
             <a href="{% url 'dl_user:manage_user_view' user.pk %}">
-                {{ user.user.first_name }}
+                {{ user.user.full_name }}
             </a>
         </td>
-        <td>{{ user.user.last_name }}</td>
         <td>{{ user.user.email }}</td>
         <td>
             {% if user.verified %}

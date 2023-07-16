@@ -37,8 +37,7 @@ class UserRegisterForm(forms.Form):
         address = forms.CharField(max_length=1000, widget=forms.Textarea())
         country = CountryField().formfield()
     # mandatory schema fields during registration
-    first_name = forms.CharField(required=True, max_length=255)
-    last_name = forms.CharField(required=True, max_length=255)
+    full_name = forms.CharField(required=False, max_length=255)
     username = forms.CharField(required=True,
                                min_length=3,
                                max_length=30,
@@ -63,16 +62,18 @@ class UserRegisterForm(forms.Form):
         self.helper.label_class = 'col-md-2'
         self.helper.field_class = 'col-md-8'
         self.helper.error_text_inline = False
-        self.helper.layout = Layout(
-                                    Fieldset('Basic Data',
-                                             Field('first_name',
-                                                   placeholder='Your first name',
-                                                   css_class="some-class"),
-                                             Div('last_name', title="Your last name"),
-                                             'email'),
-                                    Fieldset('Login Details',
-                                             'username', 'password', 'password1'),
-                                    )
+        self.helper.layout = Layout()
+        
+        if "Basic Data" in settings.LDAP_USER_DATA:
+            if "Full Name" in settings.LDAP_USER_DATA:
+                full_name = Field('full_name',
+                    placeholder='Your full name',
+                    css_class="some-class")
+                self.helper.layout.append(Fieldset('Basic Data', full_name, 'email'))
+            else:
+                self.helper.layout.append(Fieldset('Basic Data', 'email'))
+        self.helper.layout.append(Fieldset('Login Details',
+                'username', 'password', 'password1')),
         if "Personal Data" in settings.LDAP_USER_DATA:
             self.helper.layout.append(
                                       Fieldset('Personal Data',

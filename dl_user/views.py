@@ -42,8 +42,6 @@ class RegisterView(generic.FormView):
         user = User.objects.create_user(
             username=data.get('username'),
             email=data.get('email'),
-            first_name=data.get('first_name'),
-            last_name=data.get('last_name'),
             is_active=False,
         )
         # We keep the user data for later when the user activates the account so we can create it on
@@ -90,10 +88,8 @@ class RegisterActivateView(generic.View):
             "objectClass": ["inetOrgPerson", "posixAccount", "shadowAccount"],
             "uid": [user.username],
             "userPassword": [user_rr.ldap_password],
-            "sn": [user.last_name],
-            "givenName": [user.first_name],
-            "cn": [user.get_full_name()],
-            "displayName": [user.get_full_name()],
+            "cn": [user.username],
+            "sn": [user.username],
             "title": [user_rr.title],
             "mail": [user.email],
             "employeeType": [user_rr.designation],
