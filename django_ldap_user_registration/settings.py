@@ -27,7 +27,9 @@ from django_ldap_user_registration.local_settings import *
 SECRET_KEY = 's77o2h44iieig-5m&j1zdx0l+(c67jwu-vm1p9+ycul6lp@o$d'
 
 ALLOWED_HOSTS = (os.environ.get('ALLOWED_HOSTS') or '').split(',')
-
+CSRF_TRUSTED_ORIGINS = (os.environ.get('CSRF_TRUSTED_ORIGINS') or '').split(',')
+if CSRF_TRUSTED_ORIGINS[0] == '':
+    CSRF_TRUSTED_ORIGINS = []
 
 # Application definition
 

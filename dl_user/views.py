@@ -85,22 +85,12 @@ class RegisterActivateView(generic.View):
             raise AccountActivationException('This account is already active')
 
         modlist = {
-            "objectClass": ["inetOrgPerson", "posixAccount", "shadowAccount"],
+            "objectClass": ["inetOrgPerson", "shadowAccount"],
             "uid": [user.username],
             "userPassword": [user_rr.ldap_password],
             "cn": [user.username],
             "sn": [user.username],
-            "title": [user_rr.title],
-            "mail": [user.email],
-            "employeeType": [user_rr.designation],
-            "departmentNumber": [user_rr.department],
-            "telephoneNumber": [user_rr.phone],
-            "registeredAddress": [user_rr.address],
-            "homePhone": [user_rr.phone],
-            "uidNumber": [uid_number],
-            "gidNumber": [settings.LDAP_GID],
-            "loginShell": ["/bin/bash"],
-            "homeDirectory": ["/home/users/" + user.username]
+            "mail": [user.email]
         }
         # if this is a CATCH ALL IDP, we need to capture more user attributes since it serves many
         # user organizations and possibly different countries
