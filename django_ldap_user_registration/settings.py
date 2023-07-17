@@ -26,7 +26,7 @@ from django_ldap_user_registration.local_settings import *
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 's77o2h44iieig-5m&j1zdx0l+(c67jwu-vm1p9+ycul6lp@o$d'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = (os.environ.get('ALLOWED_HOSTS') or '').split(',')
 
 
 # Application definition
