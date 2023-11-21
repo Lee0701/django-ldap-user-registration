@@ -133,7 +133,7 @@ LANGUAGES = (
 )
 
 LOCALE_PATHS = [
-    BASE_DIR / 'locale/',
+    'locale',
 ]
 
 # Static files (CSS, JavaScript, Images)
