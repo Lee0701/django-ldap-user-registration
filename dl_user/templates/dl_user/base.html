@@ -1,5 +1,6 @@
 {% extends 'dl_user/bootstrap.html' %}
 {% load bootstrap3 %}
+{% load i18n %}
 {% bootstrap_css %}
 {% block bootstrap3_content %}
 {% url 'dl_user:register' as register_url %}
@@ -17,6 +18,16 @@
 	    </div>
 	    <div id="navbar" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
+			{% get_current_language as CURRENT_LANGUAGE %}
+			{% get_available_languages as AVAILABLE_LANGUAGES %}
+			{% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+		    <li>
+				{% for language in languages %}
+				<li{% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
+					<a href="/{{ language.code }}/user/">{{ language.name_translated }} ({{ language.name_local }})</a>
+				</li>
+				{% endfor %}
+			</li>
                     <!-- navigation can be extended in future if needed >
 		    <li class="active"><a href="{% url 'dl_user:home' %}">Home</a></li>
 		    <li><a href="{% url 'dl_user:register' %}">Register</a></li>

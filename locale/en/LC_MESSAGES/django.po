@@ -84,17 +84,17 @@ msgstr "Password"
 
 #: dl_user/templates/dl_user/home.html:14
 msgid "Registration of a new account"
-msgstr ""
+msgstr "Registration of a new account"
 
 #: dl_user/templates/dl_user/home.html:18
 msgid "Servicing an existing account"
-msgstr ""
+msgstr "Servicing an existing account"
 
 #: dl_user/templates/dl_user/home.html:25
 msgid ""
 "If you already have a Federated ID, you can login using your credentials at:"
-msgstr ""
+msgstr "If you already have a Federated ID, you can login using your credentials at:"
 
 #: dl_user/templates/dl_user/register.html:5
 msgid "Registering a new account"
-msgstr ""
+msgstr "Registering a new account"
