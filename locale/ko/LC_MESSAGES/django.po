@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-21 13:05+0900\n"
+"POT-Creation-Date: 2023-11-21 14:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,8 +43,10 @@ msgid "password"
 msgstr "로그인 暗號"
 
 #: dl_user/forms.py:29
+#, fuzzy
+#| msgid "password"
 msgid "confirm password"
-msgstr "로그인 暗號 確認"
+msgstr "로그인 暗號"
 
 #: dl_user/forms.py:41 dl_user/forms.py:111 dl_user/forms.py:148
 msgid "submit"
@@ -61,3 +63,38 @@ msgstr "로그인 情報"
 #: dl_user/forms.py:52
 msgid "spam control"
 msgstr "스팸 防止"
+
+#: dl_user/templates/dl_user/home.html:7
+msgid "Account information management system"
+msgstr "會員情報管理시스템"
+
+#: dl_user/templates/dl_user/home.html:9
+msgid "Register"
+msgstr "登錄"
+
+#: dl_user/templates/dl_user/home.html:10
+msgid "Forgotten password"
+msgstr "로그인 暗號 復舊"
+
+#: dl_user/templates/dl_user/home.html:11
+msgid "Password change"
+msgstr "로그인 暗號 變更"
+
+#: dl_user/templates/dl_user/home.html:14
+msgid "Registration of a new account"
+msgstr "新規 會員 登錄"
+
+#: dl_user/templates/dl_user/home.html:18
+#, fuzzy
+#| msgid "Registering a new account"
+msgid "Servicing an existing account"
+msgstr "會員 登錄"
+
+#: dl_user/templates/dl_user/home.html:25
+msgid ""
+"If you already have a Federated ID, you can login using your credentials at:"
+msgstr "이미 計定을 갖고 계시다면, 다음 住所에서 로그인하실 수 있습니다:"
+
+#: dl_user/templates/dl_user/register.html:5
+msgid "Registering a new account"
+msgstr "會員 登錄"

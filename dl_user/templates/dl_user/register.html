@@ -1,8 +1,8 @@
 {% extends "dl_user/base.html" %}
+{% load i18n %}
 {% block bootstrap3_title %}Create an account{% endblock %}
 {% block content %}
-    <h2>Registering a new account</h2>
-    <p>You are registering to the {{ settings.IDP_NAME }}</p>
+    <h2>{% translate "Registering a new account" %}</h2>
     </div>
     {% if form.errors %}
     <div class="alert alert-danger">

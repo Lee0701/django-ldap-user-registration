@@ -1,24 +1,28 @@
 {% extends 'dl_user/base.html' %}
+{% load i18n %}
 {% load bootstrap3 %}
 {% block bootstrap3_title %}{{ settings.IDP_NAME }} User Support{% endblock %}
 {% block content %}
-            <h2>{{ settings.IDP_NAME }} User Support</h2>
-	    <p>Don't have a Federated Identity yet? Proceed and register below</p>
+            <h2>{{ settings.IDP_NAME }}</h2>
+	    <p>{% translate "Account information management system" %}</p>
 	</div>
+	{% translate "Register" as register %}
+	{% translate "Forgotten password" as forgotten_password %}
+	{% translate "Password change" as password_change %}
 	<div class="row">
 	    <div class="col-xs-6 col-lg-6">
-		<h3>Registration of a new account</h3>
-                {% bootstrap_button "Register" button_type="link" size="lg" button_class="btn-success" icon="user" href=register_url %}
+		<h3>{% translate "Registration of a new account" %}</h3>
+                {% bootstrap_button register button_type="link" size="lg" button_class="btn-success" icon="user" href=register_url %}
 	    </div>
 	    <div class="col-xs-6 col-lg-6">
-		<h3>Servicing an existing account</h3>
-                {% bootstrap_button "Forgotten password" button_type="link" size="lg" button_class="btn-warning" icon="question-sign" href=password_reset_url %}
-                {% bootstrap_button "Password change" button_type="link" size="lg" button_class="btn-warning" icon="info-sign" href=password_reset_url %}
+		<h3>{% translate "Servicing an existing account" %}</h3>
+                {% bootstrap_button forgotten_password button_type="link" size="lg" button_class="btn-warning" icon="question-sign" href=password_reset_url %}
+                {% bootstrap_button password_change button_type="link" size="lg" button_class="btn-success" icon="info-sign" href=password_reset_url %}
 	    </div>
 	</div>
 	<hr>
 	<footer>
-	    <p>If you already have a Federated ID, you can test your login credentials at:
+	    <p>{% translate "If you already have a Federated ID, you can login using your credentials at:" %}
                 {% bootstrap_button settings.SERVICE_PROVIDER button_type="link" size="sm" href=settings.SERVICE_PROVIDER_URL %}
 	    </p>
 	</footer>

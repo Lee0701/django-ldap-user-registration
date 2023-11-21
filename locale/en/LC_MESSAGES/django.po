@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-21 13:05+0900\n"
+"POT-Creation-Date: 2023-11-21 14:18+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,3 +61,40 @@ msgstr "Login Details"
 #: dl_user/forms.py:52
 msgid "spam control"
 msgstr "Spam Control"
+
+#: dl_user/templates/dl_user/home.html:7
+msgid "Account information management system"
+msgstr ""
+
+#: dl_user/templates/dl_user/home.html:9
+msgid "Register"
+msgstr ""
+
+#: dl_user/templates/dl_user/home.html:10
+#, fuzzy
+#| msgid "confirm password"
+msgid "Forgotten password"
+msgstr "Confirm Password"
+
+#: dl_user/templates/dl_user/home.html:11
+#, fuzzy
+#| msgid "password"
+msgid "Password change"
+msgstr "Password"
+
+#: dl_user/templates/dl_user/home.html:14
+msgid "Registration of a new account"
+msgstr ""
+
+#: dl_user/templates/dl_user/home.html:18
+msgid "Servicing an existing account"
+msgstr ""
+
+#: dl_user/templates/dl_user/home.html:25
+msgid ""
+"If you already have a Federated ID, you can login using your credentials at:"
+msgstr ""
+
+#: dl_user/templates/dl_user/register.html:5
+msgid "Registering a new account"
+msgstr ""

@@ -1,5 +1,4 @@
 {% extends 'dl_user/bootstrap.html' %}
-{% load i18n %}
 {% load bootstrap3 %}
 {% bootstrap_css %}
 {% block bootstrap3_content %}
@@ -14,7 +13,7 @@
 		    <span class="icon-bar"></span>
 		    <span class="icon-bar"></span>
 		</button>
-                <a class="navbar-brand" href="{% url 'dl_user:home' %}">{{ settings.IDP_NAME }} User Support</a>
+                <a class="navbar-brand" href="{% url 'dl_user:home' %}">{{ settings.IDP_NAME }}</a>
 	    </div>
 	    <div id="navbar" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
